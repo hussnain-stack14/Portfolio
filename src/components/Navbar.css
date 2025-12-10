@@ -79,42 +79,63 @@
 @media (max-width: 768px) {
     .hamburger {
         display: block;
+        z-index: 1002;
     }
 
     .nav-menu {
         position: fixed;
         top: 0;
-        right: -100%;
-        width: 70%;
+        left: 0;
+        width: 100%;
         height: 100vh;
-        background: rgba(23, 23, 23, 0.95);
-        backdrop-filter: blur(15px);
+        background: var(--bg-primary);
+        background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 2rem;
-        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
-        z-index: 1000;
-        gap: 2rem;
+        gap: 2.5rem;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1001;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
     }
 
     .nav-menu.active {
-        right: 0;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
     }
 
     .nav-link {
-        font-size: 1.5rem;
-        font-weight: 600;
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--text-secondary);
+        transition: all 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link:active {
+        color: var(--accent-primary);
+        transform: scale(1.1);
+    }
+
+    .nav-link::after {
+        display: none;
+        /* Remove underline for mobile, use scale/color instead */
     }
 }
 
 @media (max-width: 480px) {
-    .nav-menu {
-        width: 85%;
-    }
-
     .logo {
         font-size: 1.5rem;
+        z-index: 1002;
+        /* Ensure logo stays visible if desired, or let menu cover it */
+        position: relative;
+    }
+
+    .nav-link {
+        font-size: 1.8rem;
     }
 }
