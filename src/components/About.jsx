@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import SectionWrapper from './SectionWrapper';
 import { profileData } from '../data/profile';
 import './About.css';
 
@@ -7,14 +7,8 @@ const About = () => {
     const { about } = profileData;
 
     return (
-        <section id="about" className="section">
-            <motion.div
-                className="container"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-            >
+        <SectionWrapper id="about" className="section">
+            <div className="container">
                 <h2 className="section-title">About Me</h2>
                 <span className="section-subtitle">Get to know me</span>
 
@@ -51,8 +45,8 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-            </motion.div>
-        </section>
+            </div>
+        </SectionWrapper>
     );
 };
 

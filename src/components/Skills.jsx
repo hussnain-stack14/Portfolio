@@ -1,4 +1,5 @@
 import React from 'react';
+import SectionWrapper from './SectionWrapper';
 import { motion } from 'framer-motion';
 import { profileData } from '../data/profile';
 import './Skills.css';
@@ -22,7 +23,7 @@ const Skills = () => {
     };
 
     return (
-        <section id="skills" className="section bg-alt">
+        <SectionWrapper id="skills" className="section bg-alt">
             <div className="container">
                 <h2 className="section-title">Skills & Tools</h2>
                 <span className="section-subtitle">My Technical Arsenal</span>
@@ -83,7 +84,7 @@ const Skills = () => {
 
                 </div>
             </div>
-        </section>
+        </SectionWrapper>
     );
 };
 

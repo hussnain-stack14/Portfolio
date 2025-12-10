@@ -74,7 +74,19 @@ const Hero = () => {
                     transition={{ duration: 0.8, delay: 0.5 }}
                     className="hero-visual"
                 >
-                    <div className="blob"></div>
+                    <motion.div
+                        className="blob"
+                        animate={{
+                            y: [0, -20, 0],
+                            scale: [1, 1.05, 1],
+                            rotate: [0, 5, -5, 0]
+                        }}
+                        transition={{
+                            duration: 6,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                        }}
+                    ></motion.div>
                 </motion.div>
             </div>
 

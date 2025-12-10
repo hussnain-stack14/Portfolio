@@ -120,3 +120,24 @@ button {
 .animate-fade-in {
   animation: fadeIn 0.8s ease forwards;
 }
+
+/* Base Mobile Responsive Styles */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 60px 0;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 1.5px;
+  }
+}

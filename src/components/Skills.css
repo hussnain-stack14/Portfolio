@@ -84,3 +84,28 @@
         gap: 3rem;
     }
 }
+
+@media (max-width: 480px) {
+    .skills-grid {
+        gap: 2rem;
+    }
+
+    .category-title {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    .skills-list {
+        gap: 10px;
+    }
+
+    .skill-card {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+
+    .tools-list {
+        grid-template-columns: 1fr;
+        /* Stack tools on very small screens if needed, or keep 2 cols if they fit */
+    }
+}

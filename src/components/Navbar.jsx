@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import './Navbar.css';
 
+import { motion } from 'framer-motion';
+
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
@@ -29,7 +31,12 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+        <motion.nav
+            className={`navbar ${scrolled ? 'scrolled' : ''}`}
+            initial={{ y: -100 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+        >
             <div className="container nav-container">
                 <a href="#hero" className="logo">
                     H<span>.</span>Ali
@@ -52,7 +59,7 @@ const Navbar = () => {
                     {isOpen ? <FaTimes /> : <FaBars />}
                 </div>
             </div>
-        </nav>
+        </motion.nav>
     );
 };
 

@@ -102,3 +102,24 @@
         padding: 2rem;
     }
 }
+
+@media (max-width: 480px) {
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .contact-desc {
+        font-size: 1rem;
+    }
+
+    .contact-link-item {
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    .icon-box {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+}

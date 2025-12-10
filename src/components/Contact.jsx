@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SectionWrapper from './SectionWrapper';
 import { FaPaperPlane, FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { profileData } from '../data/profile';
 import './Contact.css';
@@ -22,7 +23,7 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="section">
+        <SectionWrapper id="contact" className="section">
             <div className="container contact-container">
                 <div className="contact-info">
                     <h2 className="section-title">Let's Connect</h2>
@@ -88,7 +89,7 @@ const Contact = () => {
                     </button>
                 </form>
             </div>
-        </section>
+        </SectionWrapper>
     );
 };
 

@@ -41,7 +41,12 @@ const Projects = () => {
                     viewport={{ once: true }}
                 >
                     {projects.map((project, index) => (
-                        <motion.div variants={item} className="project-card" key={index}>
+                        <motion.div
+                            variants={item}
+                            className="project-card"
+                            key={index}
+                            whileHover={{ y: -10 }}
+                        >
                             <div className="project-content">
                                 <div className="project-header">
                                     <h3>{project.title}</h3>
