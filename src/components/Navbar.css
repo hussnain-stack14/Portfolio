@@ -79,63 +79,123 @@
 @media (max-width: 768px) {
     .hamburger {
         display: block;
-        z-index: 1002;
+        z-index: 1005;
+        /* Always above everything */
+        position: relative;
     }
 
     .nav-menu {
         position: fixed;
         top: 0;
-        left: 0;
-        width: 100%;
+        right: 0;
+        bottom: 0;
+        width: 75%;
+        /* Standard drawer width */
+        max-width: 320px;
         height: 100vh;
-        background: var(--bg-primary);
-        background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+
+        background: rgba(10, 25, 45, 0.95);
+        /* Dark blue-tinted background */
+        /* Deep dark background */
+        backdrop-filter: blur(20px);
+        /* Heavy blur */
+        -webkit-backdrop-filter: blur(20px);
+        border-left: 1px solid rgba(59, 130, 246, 0.2);
+        /* Blue border */
+
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 2.5rem;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 1001;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-20px);
+        gap: 2rem;
+
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        /* Apple-style ease */
+        z-index: 1004;
+
+        /* Shadow acting as the backdrop overlay */
+        box-shadow: none;
+        padding-top: 60px;
+        /* Space for top elements if needed */
     }
 
     .nav-menu.active {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
+        transform: translateX(0);
+        /* The backdrop dim effect using a massive shadow */
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5), 0 0 0 100vmax rgba(0, 0, 0, 0.6);
     }
 
     .nav-link {
-        font-size: 2rem;
-        font-weight: 700;
+        font-size: 1.5rem;
+        font-weight: 500;
         color: var(--text-secondary);
-        transition: all 0.3s ease;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        transition: color 0.2s ease, transform 0.2s ease;
     }
 
     .nav-link:hover,
     .nav-link:active {
         color: var(--accent-primary);
-        transform: scale(1.1);
+        background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.05), transparent);
+        transform: scale(1.05);
     }
 
-    .nav-link::after {
-        display: none;
-        /* Remove underline for mobile, use scale/color instead */
+    .logo {
+        z-index: 1003;
+        position: relative;
+    }
+
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .nav-menu.active .nav-link {
+        animation: slideIn 0.5s ease forwards;
+        opacity: 0;
+    }
+
+    .nav-menu.active .nav-link:nth-child(1) {
+        animation-delay: 0.1s;
+    }
+
+    .nav-menu.active .nav-link:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+
+    .nav-menu.active .nav-link:nth-child(3) {
+        animation-delay: 0.3s;
+    }
+
+    .nav-menu.active .nav-link:nth-child(4) {
+        animation-delay: 0.4s;
+    }
+
+    .nav-menu.active .nav-link:nth-child(5) {
+        animation-delay: 0.5s;
+    }
+
+    .nav-menu.active .nav-link:nth-child(6) {
+        animation-delay: 0.6s;
     }
 }
 
 @media (max-width: 480px) {
-    .logo {
-        font-size: 1.5rem;
-        z-index: 1002;
-        /* Ensure logo stays visible if desired, or let menu cover it */
-        position: relative;
+    .nav-menu {
+        width: 85%;
     }
 
     .nav-link {
-        font-size: 1.8rem;
+        font-size: 1.3rem;
     }
 }
