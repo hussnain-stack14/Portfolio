@@ -99,21 +99,52 @@
     transform: translateY(-3px);
 }
 
-/* Visual Blob */
+/* Visual Image & Blob */
 .hero-visual {
     position: relative;
     display: flex;
     justify-content: center;
-}
-
-.blob {
+    align-items: center;
     width: 400px;
     height: 400px;
+    margin: 0 auto;
+}
+
+.blob-background {
+    position: absolute;
+    width: 120%;
+    height: 120%;
     background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
     animation: blob-bounce 10s infinite ease-in-out;
-    filter: blur(40px);
-    opacity: 0.3;
+    filter: blur(60px);
+    opacity: 0.4;
+    z-index: 0;
+}
+
+.image-container {
+    position: relative;
+    z-index: 1;
+    width: 350px;
+    height: 350px;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.5s ease;
+}
+
+.image-container:hover .profile-img {
+    transform: scale(1.05);
 }
 
 @keyframes blob-bounce {
@@ -121,10 +152,12 @@
     0%,
     100% {
         border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        transform: rotate(0deg);
     }
 
     50% {
         border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+        transform: rotate(5deg);
     }
 }
 
@@ -134,11 +167,18 @@
     left: 50%;
     transform: translateX(-50%);
     animation: bounce 2s infinite;
+    cursor: pointer;
+    z-index: 10;
 }
 
 .scroll-down a {
     color: var(--text-secondary);
     font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.scroll-down a:hover {
+    color: var(--accent-primary);
 }
 
 @keyframes bounce {
@@ -167,13 +207,14 @@
         text-align: center;
         padding-top: 30px;
         position: relative;
-        gap: 30px;
+        gap: 50px;
     }
 
     .hero-content {
         position: relative;
-        z-index: 1;
+        z-index: 2;
         order: 1;
+        /* Keep content on top specifically if needed, or remove order to default */
     }
 
     .hero-greeting {
@@ -216,28 +257,22 @@
         justify-content: center;
     }
 
-    /* Move blob behind text on mobile for better space utilization */
+    /* Move visual to top on mobile */
     .hero-visual {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        pointer-events: none;
         order: 0;
+        width: 280px;
+        height: 280px;
+        margin-bottom: 20px;
+        position: relative;
+        /* Reset from absolute */
+        top: auto;
+        left: auto;
+        pointer-events: auto;
     }
 
-    .blob {
-        width: 250px;
-        height: 250px;
-        opacity: 0.1;
-        /* Very subtle background */
-        filter: blur(50px);
-        margin: 0;
+    .image-container {
+        width: 240px;
+        height: 240px;
     }
 }
 
@@ -253,5 +288,15 @@
     .scroll-down {
         bottom: 20px;
         opacity: 0.7;
+    }
+
+    .hero-visual {
+        width: 220px;
+        height: 220px;
+    }
+
+    .image-container {
+        width: 200px;
+        height: 200px;
     }
 }

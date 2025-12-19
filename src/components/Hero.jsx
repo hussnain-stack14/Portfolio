@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope, FaArrowDown } from 'react-icons/fa';
 import { profileData } from '../data/profile';
+import profilePic from '../assets/profile-pic.png';
 import './Hero.css';
 
 const Hero = () => {
@@ -67,26 +68,25 @@ const Hero = () => {
                     </motion.div>
                 </motion.div>
 
-                {/* Abstract visual element or image placeholder */}
+                {/* Profile Image with subtle blob background */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.5 }}
                     className="hero-visual"
                 >
+                    <div className="blob-background"></div>
                     <motion.div
-                        className="blob"
-                        animate={{
-                            y: [0, -20, 0],
-                            scale: [1, 1.05, 1],
-                            rotate: [0, 5, -5, 0]
-                        }}
+                        className="image-container"
+                        animate={{ y: [-10, 10, -10] }}
                         transition={{
                             duration: 6,
                             repeat: Infinity,
                             ease: "easeInOut"
                         }}
-                    ></motion.div>
+                    >
+                        <img src={profilePic} alt={name} className="profile-img" />
+                    </motion.div>
                 </motion.div>
             </div>
 

@@ -32,15 +32,15 @@ export const profileData = {
       problemServed: "Solved functionality issues in existing legacy checkout systems.",
       technologies: ["React", "Node.js", "MongoDB", "Express", "Stripe"],
       contribution: "Built the entire backend and integrated the frontend with secure payment gateways.",
-      link: "#"
+      link: "https://github.com/hussnain-stack14/Ecommerce-web"
     },
     {
-      title: "Task Management App",
-      description: "A productivity tool for teams to track tasks and collaborate in real-time.",
-      problemServed: "Helped remote teams stay synchronized.",
-      technologies: ["React", "Firebase", "Tailwind CSS"],
-      contribution: "Designed the UI and implemented real-time database updates.",
-      link: "#"
+      title: "POS System",
+      description: "A comprehensive Point of Sale system for managing sales, inventory, and customers efficiently.",
+      problemServed: "Streamlined retail operations and inventory tracking for small businesses.",
+      technologies: ["React", "Node.js", "Express", "MongoDB", "JWT"],
+      contribution: "Developed the full-stack solution including role-based authentication and sales analytics.",
+      link: "https://github.com/hussnain-stack14/POS-system"
     },
     {
       title: "Weather Forecasting App",
@@ -48,7 +48,7 @@ export const profileData = {
       problemServed: "Users needed a reliable way to check weather conditions for multiple locations instantly.",
       technologies: ["React", "Node.js", "Express", "OpenWeatherMap API"],
       contribution: "Developed the full-stack application and integrated external weather APIs for real-time data.",
-      link: "#"
+      link: "https://github.com/hussnain-stack14/weather-forcasting-app"
     }
   ],
 
