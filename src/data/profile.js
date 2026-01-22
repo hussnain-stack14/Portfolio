@@ -4,6 +4,7 @@ export const profileData = {
   subRole: "Software Engineer",
   tagline: "Building scalable, user-centric web solutions with modern technologies.",
   bio: "I am a passionate Full Stack Developer specializing in Web Development with the MERN stack. I enjoy building robust, scalable applications and solving complex problems through clean, efficient code.",
+  resume: "/Hussnain_Ali_Resume.pdf",
 
   about: {
     background: "With a strong foundation in computer science and years of hands-on experience, I have developed a deep understanding of full-cycle web development. From database design to frontend interactivity, I handle every aspect of the development process.",

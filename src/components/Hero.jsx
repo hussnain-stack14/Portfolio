@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaArrowDown } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaArrowDown, FaDownload } from 'react-icons/fa';
 import { profileData } from '../data/profile';
 import profilePic from '../assets/profile-pic.png';
 import './Hero.css';
 
 const Hero = () => {
-    const { name, role, tagline, contact } = profileData;
+    const { name, role, tagline, contact, resume } = profileData;
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -47,9 +47,13 @@ const Hero = () => {
                     </motion.p>
 
                     <motion.div variants={itemVariants} className="hero-actions">
-                        <a href="#projects" className="btn btn-primary">
+                        <a href="/Hussnain_Ali_Resume.pdf" download="Hussnain_Ali_Resume.pdf" className="btn btn-primary">
+                            Resume <FaDownload style={{ marginLeft: '8px' }} />
+                        </a>
+                        <a href="#projects" className="btn btn-outline">
                             View My Work
                         </a>
+
                         <a href="#contact" className="btn btn-outline">
                             Contact Me
                         </a>
