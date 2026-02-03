@@ -1,7 +1,7 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { profileData } from '../data/profile';
+import SectionWrapper from './SectionWrapper';
 import './Experience.css';
 
 const Experience = () => {
@@ -21,17 +21,12 @@ const Experience = () => {
     };
 
     return (
-        <section id="experience" className="section bg-alt">
+        <SectionWrapper id="experience" className="section bg-alt">
             <div className="container">
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                >
+                <div className="section-header">
                     <h2 className="section-title">Experience & Education</h2>
                     <span className="section-subtitle">My Journey</span>
-                </motion.div>
+                </div>
 
                 <div className="timeline-container">
                     <div className="timeline-column">
@@ -85,8 +80,9 @@ const Experience = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </SectionWrapper>
     );
 };
 
 export default Experience;
+

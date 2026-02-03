@@ -1,41 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes, FaSun, FaMoon } from 'react-icons/fa';
 import './Navbar.css';
 
 import { motion } from 'framer-motion';
 
-const Navbar = () => {
+const Navbar = ({ theme, toggleTheme }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 50) {
-                setScrolled(true);
-            } else {
-                setScrolled(false);
-            }
+            setScrolled(window.scrollY > 50);
         };
-
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
-
-    // Lock body scroll when menu is open
-    useEffect(() => {
-        if (isOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'unset';
-        }
-    }, [isOpen]);
 
     const navLinks = [
         { name: 'Home', href: '#hero' },
         { name: 'About', href: '#about' },
         { name: 'Skills', href: '#skills' },
-        { name: 'Projects', href: '#projects' },
         { name: 'Experience', href: '#experience' },
+        { name: 'Projects', href: '#projects' },
         { name: 'Contact', href: '#contact' },
     ];
 
@@ -44,7 +30,7 @@ const Navbar = () => {
             className={`navbar ${scrolled ? 'scrolled' : ''}`}
             initial={{ y: -100 }}
             animate={{ y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
+            transition={{ duration: 0.5 }}
         >
             <div className="container nav-container">
                 <a href="#hero" className="logo">
@@ -64,8 +50,13 @@ const Navbar = () => {
                     ))}
                 </div>
 
-                <div className="hamburger" onClick={() => setIsOpen(!isOpen)}>
-                    {isOpen ? <FaTimes /> : <FaBars />}
+                <div className="nav-actions">
+                    <button className="theme-toggle" onClick={toggleTheme}>
+                        {theme === 'light' ? <FaMoon /> : <FaSun />}
+                    </button>
+                    <div className="hamburger" onClick={() => setIsOpen(!isOpen)}>
+                        {isOpen ? <FaTimes /> : <FaBars />}
+                    </div>
                 </div>
             </div>
         </motion.nav>

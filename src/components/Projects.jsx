@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { profileData } from '../data/profile';
+import SectionWrapper from './SectionWrapper';
 import './Projects.css';
 
 const Projects = () => {
@@ -21,17 +22,12 @@ const Projects = () => {
     };
 
     return (
-        <section id="projects" className="section">
+        <SectionWrapper id="projects" className="section">
             <div className="container">
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                >
+                <div className="section-header">
                     <h2 className="section-title">Featured Projects</h2>
                     <span className="section-subtitle">What I've Built</span>
-                </motion.div>
+                </div>
 
                 <motion.div
                     className="projects-grid"
@@ -73,8 +69,9 @@ const Projects = () => {
                     ))}
                 </motion.div>
             </div>
-        </section>
+        </SectionWrapper>
     );
 };
 
 export default Projects;
+

@@ -1,9 +1,7 @@
 export const profileData = {
   name: "Hussnain Ali",
   role: "Full Stack Web Developer",
-  subRole: "Software Engineer",
   tagline: "Building scalable, user-centric web solutions with modern technologies.",
-  bio: "I am a passionate Full Stack Developer specializing in Web Development with the MERN stack. I enjoy building robust, scalable applications and solving complex problems through clean, efficient code.",
   resume: "/Hussnain_Ali_Resume.pdf",
 
   about: {

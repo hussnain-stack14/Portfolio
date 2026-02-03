@@ -47,7 +47,7 @@ const Hero = () => {
                     </motion.p>
 
                     <motion.div variants={itemVariants} className="hero-actions">
-                        <a href="/Hussnain_Ali_Resume.pdf" download="Hussnain_Ali_Resume.pdf" className="btn btn-primary">
+                        <a href={resume} download="Hussnain_Ali_Resume.pdf" className="btn btn-primary">
                             Resume <FaDownload style={{ marginLeft: '8px' }} />
                         </a>
                         <a href="#projects" className="btn btn-outline">
@@ -72,7 +72,7 @@ const Hero = () => {
                     </motion.div>
                 </motion.div>
 
-                {/* Profile Image with subtle blob background */}
+                {/* Profile Image with futuristic artwork */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -81,7 +81,7 @@ const Hero = () => {
                 >
                     <div className="blob-background"></div>
                     <motion.div
-                        className="image-container"
+                        className="image-container futuristic-artwork"
                         animate={{ y: [-10, 10, -10] }}
                         transition={{
                             duration: 6,

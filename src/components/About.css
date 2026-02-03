@@ -1,36 +1,60 @@
 .section {
-    padding: 100px 0;
+    padding: 140px 0;
+    transition: background-color var(--transition-theme);
+    background-color: var(--bg-primary);
+    position: relative;
+    z-index: 1;
 }
 
 .about-content {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 60px;
-    margin-top: 3rem;
-    align-items: start;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 80px;
+    margin-top: 60px;
+    align-items: center;
 }
 
 .about-heading {
-    font-size: 1.5rem;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 1.2;
     color: var(--text-primary);
-    margin-bottom: 1rem;
-    margin-top: 2rem;
-}
-
-.about-heading:first-child {
-    margin-top: 0;
+    margin-bottom: 30px;
+    font-weight: 800;
 }
 
 .about-desc {
     color: var(--text-secondary);
-    font-size: 1.05rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.7;
+    font-size: 1.15rem;
+    margin-bottom: 35px;
+    line-height: 1.9;
+    max-width: 650px;
+}
+
+.unique-card {
+    padding: 35px;
+    border-left: 5px solid var(--accent-color);
+    background: linear-gradient(135deg, var(--card-bg), var(--bg-tertiary));
+    margin-bottom: 40px;
+    border-radius: 12px 24px 24px 12px;
+}
+
+.unique-card .about-heading {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+}
+
+.unique-card .about-desc {
+    margin-bottom: 0;
+    font-style: italic;
+    font-size: 1.1rem;
 }
 
 .about-strengths h3 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    font-weight: 700;
+    color: var(--text-primary);
 }
 
 .tags {
@@ -40,79 +64,83 @@
 }
 
 .tag {
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--accent-primary);
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    border: 1px solid var(--border-color);
-    transition: all 0.3s ease;
+    background: var(--bg-tertiary);
+    color: var(--accent-color);
+    padding: 10px 24px;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 1px solid var(--glass-border);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .tag:hover {
-    background: var(--accent-primary);
+    background: var(--accent-color);
     color: white;
-    border-color: var(--accent-primary);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px var(--accent-glow);
 }
 
 .about-stats-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 30px;
 }
 
-.glass-card {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 2rem;
-    border-radius: 12px;
+.glass-card.stat-card {
+    padding: 50px 30px;
     text-align: center;
-    transition: transform 0.3s ease;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 180px;
+    border: 2px solid var(--glass-border);
 }
 
 .glass-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent-primary);
+    border-color: var(--accent-color);
+    box-shadow: 0 15px 40px var(--accent-glow);
 }
 
-.glass-card h4 {
-    font-size: 2.5rem;
-    color: var(--accent-primary);
-    font-weight: 700;
-    margin-bottom: 5px;
+.glass-card.stat-card h4 {
+    font-size: 3.2rem;
+    color: var(--accent-color);
+    font-weight: 800;
+    margin-bottom: 8px;
+    line-height: 1;
 }
 
-.glass-card p {
+.glass-card.stat-card p {
     color: var(--text-tertiary);
     font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .about-content {
         grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .about-stats-container {
-        gap: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .glass-card {
-        padding: 1.5rem;
-    }
-
-    .glass-card h4 {
-        font-size: 2rem;
+        gap: 60px;
+        text-align: center;
     }
 
     .about-desc {
-        font-size: 1rem;
+        margin: 0 auto 35px;
     }
 
+    .tags {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .about-stats-container {
+        grid-template-columns: 1fr;
+    }
+    
     .section {
-        padding: 60px 0;
+        padding: 100px 0;
     }
 }

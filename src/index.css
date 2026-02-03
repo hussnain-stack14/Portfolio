@@ -1,30 +1,52 @@
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
-  /* Colors - Modern Dark Theme */
-  --bg-primary: #0a0a0a;
-  --bg-secondary: #171717;
-  --bg-tertiary: #262626;
-
-  --text-primary: #ffffff;
-  --text-secondary: #a3a3a3;
-  --text-tertiary: #737373;
-
-  --accent-primary: #3b82f6;
-  /* Vivid Blue */
-  --accent-secondary: #60a5fa;
-  --accent-glow: rgba(59, 130, 246, 0.5);
-
-  --border-color: #404040;
-
-  /* Spacing */
-  --container-width: 1200px;
-  --section-padding: 100px 0;
-
-  /* Transitions */
-  --transition-fast: 0.2s ease;
+  /* Futuristic Color Palette Tokens */
+  --indigo: #4F46E5;
+  --emerald: #10B981;
+  --amber: #F59E0B;
+  --rose: #F43F5E;
+  --violet: #8B5CF6;
+  --cyan: #06B6D4;
+  
+  /* Transition speed */
+  --transition-theme: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 0.3s ease;
+}
+
+/* Light Theme Variables - Soft & Airy */
+.light-theme {
+  --bg-primary: #FEFAE0;
+  --bg-secondary: #FAEDCD;
+  --bg-tertiary: #E9EDC9;
+  --text-primary: #450920;
+  --text-secondary: #5c4033;
+  --text-tertiary: #7d5a50;
+  --border-color: #CCD5AE;
+  --card-bg: rgba(255, 255, 255, 0.6);
+  --accent-glow: rgba(212, 163, 115, 0.2);
+  --glass-border: rgba(204, 213, 174, 0.5);
+  --shadow: 0 20px 40px rgba(69, 9, 32, 0.1);
+  --gradient-primary: linear-gradient(135deg, #450920 0%, #D4A373 100%);
+  --accent-color: #D4A373;
+}
+
+/* Dark Theme Variables - Deep & Cyber */
+.dark-theme {
+  --bg-primary: #020617; /* Even deeper black-blue */
+  --bg-secondary: #0f172a;
+  --bg-tertiary: #1e293b;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  --border-color: #334155; /* Higher contrast border */
+  --card-bg: rgba(15, 23, 42, 0.9); /* More opaque for better contrast */
+  --accent-glow: rgba(16, 185, 129, 0.3);
+  --glass-border: rgba(16, 185, 129, 0.45); /* Significantly visible borders */
+  --shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+  --gradient-primary: linear-gradient(135deg, #10B981 0%, #3B82F6 100%);
+  --accent-color: #10B981;
 }
 
 * {
@@ -35,6 +57,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -43,23 +66,49 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
+  transition: background-color var(--transition-theme), color var(--transition-theme);
+  position: relative;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+.light-theme body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.05) 0, transparent 50%), 
+    radial-gradient(at 50% 0%, rgba(236, 72, 153, 0.05) 0, transparent 50%), 
+    radial-gradient(at 100% 0%, rgba(6, 182, 212, 0.05) 0, transparent 50%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.dark-theme body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(16, 185, 129, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 185, 129, 0.02) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Outfit', sans-serif;
-  color: var(--text-primary);
-  line-height: 1.2;
+  transition: color var(--transition-theme);
 }
 
 a {
   text-decoration: none;
   color: inherit;
-  transition: var(--transition-fast);
+  transition: var(--transition-normal);
 }
 
 ul {
@@ -75,29 +124,50 @@ button {
 
 /* Utilities */
 .container {
-  max-width: var(--container-width);
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
 .section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
   margin-bottom: 1.5rem;
-  background: linear-gradient(to right, #fff, var(--text-secondary));
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
+  letter-spacing: -0.02em;
 }
 
 .section-subtitle {
-  color: var(--accent-primary);
-  font-weight: 600;
-  letter-spacing: 2px;
+  color: var(--accent-color);
+  font-weight: 700;
+  letter-spacing: 3px;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
   display: block;
+  font-size: 0.85rem;
+}
+
+/* No need for separate dark-theme override as we use --accent-color now */
+
+/* Futuristic Glass Card */
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 2px solid var(--glass-border); /* Increased from 1px to 2px */
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  transition: all var(--transition-normal);
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-color);
+  box-shadow: 0 15px 30px var(--accent-glow);
 }
 
 /* Scrollbar */
@@ -111,47 +181,31 @@ button {
 
 ::-webkit-scrollbar-thumb {
   background: var(--bg-tertiary);
-  border-radius: 5px;
+  border: 2px solid var(--bg-primary);
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-primary);
+  background: var(--accent-color);
+}
+
+::selection {
+  background: var(--accent-color);
+  color: white;
 }
 
 /* Animations */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fade-in {
   animation: fadeIn 0.8s ease forwards;
 }
 
-/* Base Mobile Responsive Styles */
 @media (max-width: 768px) {
-  :root {
-    --section-padding: 60px 0;
-  }
-
   .container {
-    padding: 0 16px;
-  }
-
-  .section-title {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-
-  .section-subtitle {
-    font-size: 0.9rem;
-    letter-spacing: 1.5px;
+    padding: 0 20px;
   }
 }
