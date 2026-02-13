@@ -20,7 +20,7 @@
   --bg-primary: #FEFAE0;
   --bg-secondary: #FAEDCD;
   --bg-tertiary: #E9EDC9;
-  --text-primary: #450920;
+  --text-primary: #270a15;
   --text-secondary: #5c4033;
   --text-tertiary: #7d5a50;
   --border-color: #CCD5AE;
@@ -29,7 +29,7 @@
   --glass-border: rgba(204, 213, 174, 0.5);
   --shadow: 0 20px 40px rgba(69, 9, 32, 0.1);
   --gradient-primary: linear-gradient(135deg, #450920 0%, #D4A373 100%);
-  --accent-color: #D4A373;
+  --accent-color: #e2903e;
 }
 
 /* Dark Theme Variables - Deep & Cyber */
