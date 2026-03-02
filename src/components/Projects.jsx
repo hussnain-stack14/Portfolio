@@ -47,8 +47,8 @@ const Projects = () => {
                                 <div className="project-header">
                                     <h3>{project.title}</h3>
                                     <div className="project-links">
-                                        <a href={project.link} target="_blank" rel="noopener noreferrer"><FaGithub /></a>
-                                        <a href={project.link} target="_blank" rel="noopener noreferrer"><FaExternalLinkAlt /></a>
+                                        {project.github && <a href={project.github} target="_blank" rel="noopener noreferrer" title="View Code"><FaGithub /></a>}
+                                        {project.demo && <a href={project.demo} target="_blank" rel="noopener noreferrer" title="Live Demo"><FaExternalLinkAlt /></a>}
                                     </div>
                                 </div>
 
