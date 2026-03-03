@@ -38,7 +38,6 @@ export const profileData = {
     tools: [
       { name: "VS Code", description: "Primary Code Editor" },
       { name: "Figma", description: "UI/UX Design" },
-      { name: "Postman", description: "API Testing" },
       { name: "Git", description: "Version Control" },
     ],
   },
@@ -107,7 +106,7 @@ export const profileData = {
 
   education: [
     {
-      degree: "BS Software Engineering",
+      degree: "BS Software-Engineering",
       institution: "National University of Modern Languages (NUML)",
       year: "2023 - 2027",
     },
