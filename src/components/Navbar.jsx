@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaBars, FaTimes, FaSun, FaMoon } from 'react-icons/fa';
+import { FaBars, FaTimes, FaSun, FaMoon, FaCoffee } from 'react-icons/fa';
 import './Navbar.css';
 
 import { motion } from 'framer-motion';
@@ -52,7 +52,9 @@ const Navbar = ({ theme, toggleTheme }) => {
 
                 <div className="nav-actions">
                     <button className="theme-toggle" onClick={toggleTheme}>
-                        {theme === 'light' ? <FaMoon /> : <FaSun />}
+                        {theme === 'light' && <FaSun />}
+                        {theme === 'vintage' && <FaCoffee />}
+                        {theme === 'dark' && <FaMoon />}
                     </button>
                     <div className="hamburger" onClick={() => setIsOpen(!isOpen)}>
                         {isOpen ? <FaTimes /> : <FaBars />}
