@@ -1,5 +1,7 @@
+import Link from 'next/link';
+import { Award, ArrowUpRight } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
-import { education, experience, skills } from '@/lib/data';
+import { certifications, education, experience, skills } from '@/lib/data';
 
 export default function ResumeSection() {
   return (
@@ -21,6 +23,7 @@ export default function ResumeSection() {
             </div>
           ))}
         </div>
+
       </div>
 
       <div>
@@ -44,6 +47,20 @@ export default function ResumeSection() {
               <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-7 text-zinc-400">
                 {item.details?.map((detail) => <li key={detail}>{detail}</li>)}
               </ul>
+              {(() => {
+                const certification = certifications.find((entry) => entry.company === item.meta);
+
+                return certification ? (
+                  <Link
+                    href={`/certifications/${certification.slug}`}
+                    className="mt-5 inline-flex items-center gap-2 rounded-xl border border-cyan-400/30 bg-cyan-100/10 px-4 py-3 text-sm font-semibold text-white-200 transition hover:border-cyan-300/60 hover:bg-cyan-500/20"
+                  >
+                    <Award size={22} aria-hidden="true"  className='text-cyan-400'/>
+                    View Certification
+                    <ArrowUpRight size={17} aria-hidden="true" />
+                  </Link>
+                ) : null;
+              })()}
             </div>
           ))}
         </div>

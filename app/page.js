@@ -12,7 +12,11 @@ import Hero from '@/components/Hero';
 import { projects } from '@/lib/data';
 
 export default function HomePage() {
-  const [activeTab, setActiveTab] = useState('home');
+  const [activeTab, setActiveTab] = useState(() => {
+    if (typeof window === 'undefined') return 'home';
+
+    return new URLSearchParams(window.location.search).get('tab') || 'home';
+  });
   const [activeFilter, setActiveFilter] = useState('All');
 
   const filteredProjects = useMemo(() => {
