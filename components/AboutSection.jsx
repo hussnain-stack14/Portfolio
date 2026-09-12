@@ -9,11 +9,12 @@ import { clients, services, testimonials } from "@/lib/data";
 
 export default function AboutSection() {
   return (
-    <section className="relative space-y-8 overflow-hidden">
+    <section className="relative space-y-10 overflow-hidden">
       <div className="relative z-10 space-y-8">
         <div>
-          <SectionHeading title="About Me" />
-          <p className="max-w-max text-lg leading-8 text-zinc-400">
+          <SectionHeading title="About Me" eyebrow="02 / About" />
+          <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
+          <p className="max-w-2xl text-base leading-8 text-zinc-400 sm:text-lg">
             <WordReveal
               text="I'm a Full Stack Web Developer based in Faisalabad, Pakistan, specializing in modern web applications with"
               delay={0}
@@ -34,12 +35,14 @@ export default function AboutSection() {
               staggerDelay={0.03}
             />
           </p>
+          <div className="border-l border-cyan-300/50 pl-5 text-sm leading-7 text-zinc-400"><p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">The focus</p><p className="mt-3">Responsive UI, dependable APIs, thoughtful database design, clean architecture, and websites that serve a real business goal.</p></div>
+          </div>
         </div>
 
         <FadeInSection delay={0.1}>
           <div>
-            <h3 className="mb-4 text-xl font-semibold text-white">
-              What I&apos;m Doing
+            <h3 className="mb-5 text-xl font-semibold text-white">
+              Services
             </h3>
             <div className="grid gap-4 md:grid-cols-2">
               {services.map((service, index) => (
@@ -69,7 +72,7 @@ export default function AboutSection() {
         <FadeInSection delay={0.15}>
           <div>
             <h3 className="mb-4 text-xl font-semibold text-white">Worked With</h3>
-            <div className="flex flex-wrap items-center gap-3 rounded-2xl border border-white/10 bg-[#1a1a1d] p-4">
+            <div className="flex flex-wrap items-center gap-3 border border-white/10 bg-[#141414] p-4">
               {clients.map((client) => (
                 <div
                   key={client}

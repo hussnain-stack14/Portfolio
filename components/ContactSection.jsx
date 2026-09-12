@@ -44,9 +44,9 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="space-y-8">
-      <SectionHeading title="Contact" />
-      <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#1a1a1d]">
+    <section className="space-y-9">
+      <div className="max-w-3xl"><SectionHeading title="Let&apos;s build something that works." eyebrow="05 / Contact" /><p className="mt-4 text-base leading-7 text-zinc-400">Whether you are a local business looking for a better website or a team looking for a thoughtful full-stack developer, I&apos;d be glad to hear what you are working on.</p></div>
+      <div className="overflow-hidden border border-white/10 bg-[#141414]">
         <div className="relative h-72">
           <iframe
             title="Location map"
@@ -61,7 +61,7 @@ export default function ContactSection() {
         </div>
       </div>
 
-      <div className="rounded-3xl border border-white/10 bg-[#1a1a1d] p-6">
+      <div className="border border-white/10 bg-[#141414] p-6 sm:p-8">
         <h3 className="mb-4 text-xl font-semibold text-white">Contact Form</h3>
         <form className="space-y-4" onSubmit={handleSubmit}>
           <div className="grid gap-4 md:grid-cols-2">
@@ -72,7 +72,7 @@ export default function ContactSection() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white outline-none"
+                className="w-full rounded-md border border-white/10 bg-black/20 px-4 py-3 text-white outline-none transition focus:border-cyan-300"
                 placeholder="Your name"
               />
             </label>
@@ -84,7 +84,7 @@ export default function ContactSection() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white outline-none"
+                className="w-full rounded-md border border-white/10 bg-black/20 px-4 py-3 text-white outline-none transition focus:border-cyan-300"
                 placeholder="you@example.com"
               />
             </label>
@@ -97,7 +97,7 @@ export default function ContactSection() {
               onChange={handleChange}
               required
               rows={6}
-              className="w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white outline-none"
+              className="w-full rounded-md border border-white/10 bg-black/20 px-4 py-3 text-white outline-none transition focus:border-cyan-300"
               placeholder="Tell me about your project..."
             />
           </label>

@@ -1,51 +1,53 @@
 import Image from "next/image";
-import { Smartphone, Zap, Search, Briefcase, ArrowRight } from "lucide-react";
+import { Smartphone, Zap, Search, Briefcase, ArrowRight, Code2, Database, Server } from "lucide-react";
 import VantaNetBackground from "./VantaNetBackground";
 
 export default function Hero({ onNavigate }) {
   return (
-    <section className="relative flex min-h-[calc(100svh-80px)] items-center overflow-hidden bg-[#1a1a1d] py-10 text-white sm:py-14 lg:min-h-[calc(100vh-80px)] lg:py-10">
+    <section className="relative overflow-hidden bg-[#1a1a1d] py-12 text-white sm:py-16 lg:py-20">
       {/* Vanta 3D Network Background */}
       <VantaNetBackground />
 
       {/* Background Glow */}
-      <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[300px] w-[300px] sm:h-[500px] sm:w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-400/5 blur-[120px] sm:blur-[140px]" />
+      <div className="pointer-events-none absolute right-0 top-1/2 z-0 h-[260px] w-[260px] -translate-y-1/2 rounded-full bg-cyan-400/5 blur-[110px] sm:h-[420px] sm:w-[420px]" />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
-        <div className="grid w-full items-center gap-12 lg:grid-cols-2 lg:gap-14">
+        <div className="grid w-full items-center gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16">
           {/* ================= LEFT CONTENT ================= */}
           <div className="mx-auto w-full max-w-2xl min-w-0 text-center sm:text-left lg:mx-0">
             {/* Eyebrow */}
             <div className="hero-reveal hero-delay-1 mx-auto mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-[#27272A] bg-[#141414] px-3.5 py-1.5 sm:mx-0 sm:rounded-md sm:px-3 sm:py-2">
               <span className="h-2 w-2 rounded-full bg-cyan-400 animate-pulse" />
-              <span className="text-[10px] sm:text-xs font-semibold tracking-wider text-gray-300 uppercase">
-                WEB DEVELOPER IN FAISALABAD
+              <span className="text-[10px] sm:text-xs font-semibold tracking-[0.18em] text-gray-300 uppercase">
+                FULL-STACK WEB DEVELOPER
               </span>
             </div>
 
             {/* Heading */}
-            <h1 className="hero-reveal hero-delay-2 break-words text-4xl font-bold leading-[1.08] tracking-tight sm:text-4xl md:text-3xl lg:text-3xl">
-              I Build Websites{" "}
-              <span className="bg-gradient-to-r from-cyan-400 to-[#22D3EE] bg-clip-text text-transparent">
-                That Help Local Businesses Grow
+            <h1 className="hero-reveal hero-delay-2 break-words text-4xl font-bold leading-[1.04] tracking-[-0.03em] sm:text-5xl lg:text-4xl">
+              I Build Modern Websites {" "}
+              <span className="text-cyan-300">
+                That Help Businesses Grow.
               </span>
             </h1>
 
             {/* Description */}
-            <p className="hero-reveal hero-delay-3 mx-auto mt-5 max-w-xl text-4 leading-5 text-[#A1A1AA] sm:mx-0 sm:text-sm sm:leading-6 md:text-base md:leading-7 lg:text-lg">
-              Fast, modern, mobile-friendly websites for restaurants, clinics,
-              salons, and small businesses in Faisalabad designed to build
-              trust, attract customers, and turn visitors into clients.
+            <p className="hero-reveal hero-delay-3 mx-auto mt-6 max-w-xl text-base leading-7 text-[#A1A1AA] sm:mx-0 lg:text-lg">
+              I help ambitious businesses and teams turn ideas into fast, responsive digital products with React, Next.js, Node.js, Express, and MongoDB.
             </p>
+
+            <div className="hero-reveal hero-delay-3 mt-5 flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs font-medium text-zinc-400 sm:justify-start">
+              <span>React</span><span className="text-cyan-400">•</span><span>Next.js</span><span className="text-cyan-400">•</span><span>Node.js</span><span className="text-cyan-400">•</span><span>Express</span><span className="text-cyan-400">•</span><span>MongoDB</span>
+            </div>
 
             {/* CTA Buttons */}
             <div className="hero-reveal hero-delay-4 mx-auto mt-8 flex w-full max-w-xl flex-col gap-3.5 sm:mx-0 sm:flex-row sm:items-center">
               <button
                 type="button"
                 onClick={() => onNavigate("contact")}
-                className="group inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#dbdfe0]  px-4 py-3 text-xl font-semibold text-[#0A0A0A] shadow-lg shadow-cyan-400/20 transition-all duration-300 hover: hover:bg-cyan-400 shadow-cyan-400/30 sm:w-auto sm:px-6 sm:py-3.5 sm:text-sm"
+                className="group inline-flex w-full items-center justify-center gap-2 rounded-lg bg-cyan-300 px-4 py-3 text-sm font-semibold text-[#0A0A0A] shadow-lg shadow-cyan-400/10 transition-all duration-300 hover:bg-cyan-200 sm:w-auto sm:px-6 sm:py-3.5"
               >
-                Let's Build Your Website
+                Let&apos;s Build Your Website
                 <span className="transition-transform duration-300 group-hover:translate-x-1">
                   <ArrowRight className="h-5 w-5" />
                 </span>
@@ -54,7 +56,7 @@ export default function Hero({ onNavigate }) {
               <button
                 type="button"
                 onClick={() => onNavigate("portfolio")}
-                className="inline-flex w-full items-center justify-center rounded-lg border border-[#27272A] bg-[#1a1a1d] px-4 py-3 text-xs font-semibold text-white transition-all duration-300 hover:border-cyan-400 hover:bg-[#141414] sm:w-auto sm:px-6 sm:py-3.5 sm:text-sm"
+                className="order-first inline-flex w-full items-center justify-center rounded-lg border border-[#3f3f46] bg-transparent px-4 py-3 text-sm font-semibold text-white transition-all duration-300 hover:border-cyan-400 hover:bg-[#141414] sm:order-none sm:w-auto sm:px-6 sm:py-3.5"
               >
                 View My Work
               </button>
@@ -119,25 +121,35 @@ export default function Hero({ onNavigate }) {
           {/* ================= RIGHT VISUAL ================= */}
           <div className="hero-float relative mt-2 flex items-center justify-center lg:mt-0 lg:justify-end">
             {/* Image Glow */}
-            <div className="pointer-events-none absolute h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] rounded-full bg-cyan-400/10 blur-[90px] sm:blur-[110px]" />
+            <div className="pointer-events-none absolute h-[420px] w-[300px] rounded-full bg-cyan-400/10 blur-[90px] sm:h-[520px] sm:w-[380px] sm:blur-[110px]" />
 
-            <div className="hero-reveal hero-delay-3 group relative w-full max-w-[500px] overflow-hidden rounded-2xl border border-cyan-400/40 bg-[#141414] transition-all duration-500 ease-out hover:border-cyan-400 hover:shadow-[0_0_30px_rgba(103,232,249,0.3)] xl:max-w-[620px]">
+            <div className="hero-reveal hero-delay-3 group surface-grid relative w-full max-w-[620px] overflow-hidden rounded-2xl border border-cyan-400/30 bg-[#141414] p-3 shadow-2xl shadow-black/30 transition-all duration-500 ease-out hover:border-cyan-400/70 xl:max-w-[700px]">
               {/* Hover Inner Glow Overlay */}
               <div className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-tr from-cyan-400/10 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
               {/* Hero Laptop Image */}
+              <div className="relative overflow-hidden rounded-xl border border-white/10">
               <Image
                 src="/images/Hero-sideImage1.jpg"
                 alt="Modern business website design"
-                width={1200}
-                height={800}
+                width={800}
+                height={1200}
                 priority
-                className="relative z-10 h-auto w-full object-contain drop-shadow-2xl transition-transform duration-500 ease-out group-hover:scale-105"
+                className="relative z-10 aspect-[2/3] h-auto w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
               />
+              <div className="absolute bottom-3 left-3 right-3 z-20 flex items-center justify-between rounded-lg border border-white/10 bg-[#101012]/90 px-3 py-2 text-[10px] text-zinc-300 backdrop-blur">
+                <span className="flex items-center gap-2"><Code2 className="h-3.5 w-3.5 text-cyan-300" /> Product thinking</span>
+                <span className="flex items-center gap-2"><Server className="h-3.5 w-3.5 text-cyan-300" /> Full-stack build</span>
+              </div>
+              </div>
 
               {/* ================= FLOATING CARDS ================= */}
             </div>
           </div>
+        </div>
+        <div className="hero-reveal hero-delay-5 mt-14 flex flex-wrap items-center justify-center gap-x-7 gap-y-3 border-y border-white/10 py-5 text-xs font-semibold uppercase tracking-[0.16em] text-zinc-500 sm:justify-between">
+          <span className="text-zinc-400">Built with</span>
+          {['React', 'Next.js', 'Node.js', 'Express', 'MongoDB', 'JavaScript'].map((technology) => <span key={technology} className="transition-colors hover:text-cyan-300">{technology}</span>)}
         </div>
       </div>
     </section>

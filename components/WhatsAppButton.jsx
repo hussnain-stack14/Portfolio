@@ -11,7 +11,7 @@ export default function WhatsAppButton({ phoneNumber, message = "Hi, I'd like to
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 rounded-full  px-4 py-2 text-sm font-semibold text-green-400 transition hover:bg-cyan-500/10 border border-cyan-500/40 "
+      className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#25D366] px-4 py-3 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(37,211,102,0.18)] transition duration-200 hover:scale-[1.02] hover:bg-[#20bd5a] hover:shadow-[0_10px_30px_rgba(37,211,102,0.32)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1a1a1d]"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

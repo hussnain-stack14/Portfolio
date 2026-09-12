@@ -26,8 +26,8 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen bg-[#0e0e10] text-zinc-200">
-      <div className="mx-auto flex min-h-screen max-w-7xl flex-col lg:flex-row">
-        <aside className="w-full border-b border-white/10 bg-[#121214]/90 p-4 backdrop-blur lg:sticky lg:top-0 lg:min-h-screen lg:w-[320px] lg:border-b-0 lg:border-r lg:p-6">
+      <div className="mx-auto flex min-h-screen max-w-[1440px] flex-col lg:flex-row">
+        <aside className="w-full border-b border-white/10 bg-[#121214]/90 p-4 backdrop-blur lg:sticky lg:top-0 lg:min-h-screen lg:w-[292px] lg:shrink-0 lg:border-b-0 lg:border-r lg:p-5 xl:w-[320px]">
           <Sidebar />
         </aside>
 

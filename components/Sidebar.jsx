@@ -28,11 +28,17 @@ export default function Sidebar() {
               className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
             />
           </div>
-          <div className="min-w-0 item-center">
-            <h1 className="whitespace-nowrap text-lg font-bold text-white transition-colors duration-300 hover:text-cyan-200 sm:text-2xl lg:text-3xl">
-              {profile.name}
-            </h1>
-            <span className="ml-2 mt-2 text-[12px] text-center border border-cyan-400 bg-cyan-400/4 inline-flex rounded-md px-2 py-0.5 transition-colors duration-300 hover:bg-cyan-400/10">
+          <div className="min-w-0">
+            <div className="flex items-center gap-2">
+              <h1 className="whitespace-nowrap text-lg font-bold text-white transition-colors duration-300 hover:text-cyan-200 sm:text-2xl lg:text-3xl">
+                {profile.name}
+              </h1>
+              <span className="inline-flex shrink-0 items-center gap-1.5 text-[10px] font-medium text-emerald-300" title="Available for work">
+                <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(74,222,128,0.7)]" />
+                Available for work
+              </span>
+            </div>
+            <span className="mt-2 inline-flex max-w-full rounded-md border border-cyan-400/60 bg-cyan-400/5 px-2 py-1 text-center text-[11px] leading-5 tracking-[0.08em] text-cyan-100">
               {profile.role}
             </span>
           </div>
@@ -56,7 +62,7 @@ export default function Sidebar() {
       </div>
 
       <div className={`${open ? 'block' : 'hidden'} space-y-4 sm:space-y-6 lg:block`}>
-        <div className="h-px w-full bg-white/10" />
+        <div className="h-px w-full border-b border-[#333]" />
 
         <div className="space-y-2 sm:space-y-3">
           {sidebarContacts.map((item, index) => {
@@ -76,7 +82,7 @@ export default function Sidebar() {
                   <p className="text-[9px] uppercase tracking-[0.15em] text-zinc-500 sm:text-[10px] sm:tracking-[0.2em]">
                     {item.label}
                   </p>
-                  <p className="break-words font-medium text-zinc-200 transition-colors duration-300 group-hover:text-cyan-100">
+                  <p className="truncate whitespace-nowrap text-[13px] font-medium text-zinc-200 transition-colors duration-300 group-hover:text-cyan-100 sm:text-sm" title={item.value}>
                     {item.value}
                   </p>
                 </div>
@@ -99,9 +105,9 @@ export default function Sidebar() {
                   href={social.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-black/20 text-zinc-300 transition-all duration-300 hover:border-cyan-400 hover:text-cyan-200 hover:-translate-y-1 hover:shadow-[0_4px_12px_rgba(103,232,249,0.2)] sm:h-11 sm:w-11"
+                  className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-black/20 text-zinc-300 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-300 hover:shadow-[0_4px_12px_rgba(103,232,249,0.2)] sm:h-12 sm:w-12"
                 >
-                  {Icon && <Icon className="h-4 w-4 sm:h-5 sm:w-5" />}
+                  {Icon && <Icon className="h-5 w-5 sm:h-6 sm:w-6" />}
                 </Link>
               </motion.div>
             );
