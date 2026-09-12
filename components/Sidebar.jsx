@@ -35,7 +35,7 @@ export default function Sidebar() {
               </h1>
               <span className="inline-flex shrink-0 items-center gap-1.5 text-[10px] font-medium text-emerald-300" title="Available for work">
                 <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(74,222,128,0.7)]" />
-                Available for work
+              
               </span>
             </div>
             <span className="mt-2 inline-flex max-w-full rounded-md border border-cyan-400/60 bg-cyan-400/5 px-2 py-1 text-center text-[11px] leading-5 tracking-[0.08em] text-cyan-100">
