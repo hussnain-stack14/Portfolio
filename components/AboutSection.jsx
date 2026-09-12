@@ -1,11 +1,9 @@
-import Image from "next/image";
 import { motion } from "framer-motion";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
-import TestimonialCard from "@/components/TestimonialCard";
 import FadeInSection from "@/components/FadeInSection";
 import WordReveal from "@/components/WordReveal";
-import { clients, services, testimonials } from "@/lib/data";
+import { clients, services } from "@/lib/data";
 
 export default function AboutSection() {
   return (
@@ -57,17 +55,6 @@ export default function AboutSection() {
             </div>
           </div>
         </FadeInSection>
-
-        <div>
-          {/*
-          <h3 className="mb-4 text-xl font-semibold text-white">Testimonials</h3>
-          <div className="grid gap-4 md:grid-cols-2">
-            {testimonials.map((item) => (
-              <TestimonialCard key={item.name} item={item} />
-            ))}
-          </div>
-          */}
-        </div>
 
         <FadeInSection delay={0.15}>
           <div>
