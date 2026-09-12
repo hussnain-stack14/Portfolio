@@ -44,7 +44,7 @@ export default function PortfolioSection({ activeFilter, onFilterChange, filtere
               </div>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link href={project.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-md bg-cyan-300 px-4 py-2.5 text-xs font-semibold text-[#071013] transition hover:bg-cyan-200">Live demo <ExternalLink className="h-3.5 w-3.5" /></Link>
-                <Link href="https://github.com/hussnain-stack14" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-md border border-white/15 px-4 py-2.5 text-xs font-semibold text-zinc-200 transition hover:border-cyan-300 hover:text-cyan-200"><GitBranch className="h-3.5 w-3.5" /> GitHub</Link>
+                <Link href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-md border border-white/15 px-4 py-2.5 text-xs font-semibold text-zinc-200 transition hover:border-cyan-300 hover:text-cyan-200"><GitBranch className="h-3.5 w-3.5" /> GitHub</Link>
               </div>
             </div>
           </article>
